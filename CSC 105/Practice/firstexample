@@ -1,0 +1,13 @@
+forward(1,1)
+turnRight(2,0.7)
+beep(1,96)
+forward(1,2)
+wait(2)
+forward(1,.1)
+backward(1,.1)
+beep(5,654)
+getName()
+wait(5)
+forward(1,2)
+print "HAHAHAHH"
+beep(1,990)

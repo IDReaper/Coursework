@@ -1,0 +1,11 @@
+(define last
+    (lambda (L)
+    (if (null? (cdr L))
+        (car L)
+        (last (cdr L))
+        )))
+
+(define SumOdd
+  (lambda (N)
+    (if (= N 1) 1
+        (+ (SumOdd (- N 1)) (- (* 2 N) 1) ))))

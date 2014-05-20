@@ -1,0 +1,11 @@
+1.
+Base Case: 	(cube-all'()) = '()
+
+Non-Recursive: 	The list of the cubes of the numbers in the list (cdr LS)
+		(cube-all (cdr '(x0 x1 ... xN)))
+		=(cube-all '(x1 x2 ... xN))
+		=(x1**3 x2**3 ... xN**3)
+
+Recursive:	(cube-all '(x0 x1 ... xN)) = (x0**3 x1**3 ... xN**3)
+		(cube-all '(x1 x2 ... xN)) = (x1**3 x2**3 ... xN**3)
+		(cube-all LS) = (cons (power ((car LS) 3)) (cube-all (cdr LS))) 

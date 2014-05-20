@@ -1,0 +1,64 @@
+Shawn Thompson
+Dr. Almeida
+CSC 220
+Spring 2011
+
+1:
+class subClass(superClass):
+
+	def __init__(self):
+		superClass.__init__(self)
+2:
+class superClass:
+
+	def __init__(self, number):
+		self.number = number
+
+class subClass(superClass):		
+	
+	def __str__(self):
+		return str(self.number)
+3:
+def __init__(self, firstName, lastName, pollingPlace, partyAffiliation):
+        self.firstName = firstName
+        self.lastName = lastName
+        self.pollingPlace = pollingPlace
+        self.partyAffiliation = partyAffiliation
+4:
+def getPP(self):
+        return self.pollingPlace
+5:
+def getParty(self):
+        return self.partyAffiliation
+6:
+def setPP(self, pollingPlace):
+        self.pollingPlace = pollingPlace
+7:
+def setParty(self, partyAffiliation):
+        self.partyAffiliation = partyAffiliation
+8:
+def __str__(self):
+        return self.firstName + " " + self.lastName + " " + str(self.pollingPlace) + " " + str(self.partyAffiliation)
+9:
+def __eq__(self, other):
+        return (self.firstName == other.firstName)  \
+            & (self.lastName == other.lastName)  \
+            & (self.pollingPlace == other.pollingPlace)  \
+            & (self.partyAffiliation == other.partyAffiliation)
+10:
+def enqueue(self, items):
+	self.items.reverse()
+	self.items.insert(0, item)
+	self.items.reverse()
+
+def dequeue(self, items):
+	self.items.reverse()
+	self.items.pop()
+	self.items.reverse()
+11:
+def peekFront(self):
+	return self.items[len(self.items)]
+
+
+
+

@@ -1,0 +1,5 @@
+forward(1,1)
+turnRight(2,0.75)
+beep(1,96)
+forward(1,2)
+stop()

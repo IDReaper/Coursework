@@ -1,0 +1,40 @@
+prefix notation
+arithmetic in prefix notation
+
+lists
+the empty list - ()
+taling the lists apart - car & cdr
+putting lists together - cons, list, append
+
+quote(')
+
+define - give name to procedure
+;ambda - used  to defin  e procedures
+parameter list
+procedure applications(calls)
+the difference between a data list and a procedure call
+
+if
+cond
+booleen values: #t, #f
+everything is true except for #f
+
+important tests : null?, list?, number?, equal?
+numreic relational operators: =, <, >, >=, <=, <>
+
+recursive procedures
+base case(s)
+recursive case(s)
+4 step method for developing recursive definitions
+recursive procedures for numerical functions
+recursive procedures for simple list processing functions
+
+tasks:
+convert infix arithmetic expression to prefix/Scheme arithmetic
+epression
+take lists apart
+put lists together
+write non recursive procedures
+write recursive procedures (numerical, list processing)
+show 4-step method for developing recursive definitions
+

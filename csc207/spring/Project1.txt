@@ -1,0 +1,67 @@
+Shawn Thompson
+CSC 207
+Dr. Almeida
+Project #1
+
+
+Definitions 1-5:
+
+
+1. (define delete-second1(lambda (LS) (cons (car LS) (cdr (cdr LS)))))
+
+2. (define delete-second2 (lambda (LS) (if (and (not (null? LS))(not (null? (cdr LS)))) (delete-second1 LS) LS)))
+
+3. (define switch-one-and-two (lambda (LS) (if (and (not (null? LS))(not (null? (cdr LS)))) (cons (car (cdr LS)) (cons (car LS) (cdr (cdr LS)))) LS)))
+
+4. (define put-first-last (lambda (L) (if (not (null? L)) (append (cdr L) (list (car L))) '())))
+
+5. (define make-unequal-pair (lambda (X Y) (if (not (equal? X Y)) (list X Y) (list X))))
+
+
+Interactions 1-5:
+
+
+> (delete-second1 '(3 7))
+(3)
+> (delete-second1 '(a b c d))
+(a c d)
+
+
+> (delete-second2 '())
+()
+> (delete-second2 '(3))
+(3)
+> (delete-second2 '(3 7))
+(3)
+> (delete-second2 '(a b c d))
+(a c d)
+
+
+> (switch-one-and-two '(a b))
+(b a)
+> (switch-one-and-two '())
+()
+> (switch-one-and-two '(a))
+(a)
+> (switch-one-and-two '(a b c d))
+(b a c d)
+
+
+> (put-first-last '())
+()
+> (put-first-last '(a))
+(a)
+> (put-first-last '(a b))
+(b a)
+> (put-first-last '(a b c d e))
+(b c d e a)
+
+
+> (make-unequal-pair "abc" "abc")
+("abc")
+> (make-unequal-pair 'abc 'abc)
+(abc)
+> (make-unequal-pair 3 4)
+(3 4)
+> (make-unequal-pair '(d g) '(d g))
+((d g))

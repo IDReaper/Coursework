@@ -1,0 +1,67 @@
+Question #1:
+
+Step1
+Base case: power(x, 0) = 1
+
+Step2
+Non-Recursive: power(x, n-1) = x**(n - 1) = (x*x*...*x) n-2 multiplications	
+
+Step3
+Recursive: 
+
+power(x, n)    = x**n     = (x*x*...*x*x) n-1 multiplication
+power(x, n-1)  = x**(n-1) = (x*x... *x) n-2 multiplications
+;n-2 is one less x than n-1
+;multiply the x back into n-1
+so power(x,n) = power(x,n-1)*x if n > 0
+
+
+Question #2
+power(x,n)
+
+(define power(lambda(x n)
+	(if (= n 0)
+	    1
+	(* (power x (- n 1)) x)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recursive: power(x, n) = power((x**(n-1), n))
+
+ 
+
+
+
+

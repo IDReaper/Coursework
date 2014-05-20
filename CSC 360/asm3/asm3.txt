@@ -1,0 +1,49 @@
+	CSC 360-01 Topics in Computer Science    Assignment # 3   Fall 2009
+		Due WEDNESDAY, October 14, 2009
+
+Write a Python program that will model a 2-bit binary counter using a finite state machine. If the input
+is x = 0 then the counter stops counting, and if x = 1 then the counter continues on from where it last left
+off. The output of the counter should produce the sequence 3,1,5,2,3,1,5,2,....Since there are four 
+different output values, there are four different state values too. Clearly there are only two input values.
+Model this state machine using bit vectors.
+
+Hints: See pp. 22 - 24 of text book "SYSTEM MODELING and SIMULATION, An Introduction"
+
+You may design the program such that when it executes it will prompt user for
+ (1) Initial state of the Finite State Machine.
+ (2) Input sequence of binary bits.
+The output will be
+(1)  the input sequence  and
+(2)  the output sequence.
+
+The following shows the interactions between user and the program in three executions:
+
+ >>> ================================ RESTART ================================ 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(0,1)
+
+Enter as input string a 2-bit binary list: e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,0,0,1,0,1,0,1,1,1]
+
+Input :  [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+Output:  [5, 2, 2, 2, 3, 3, 1, 1, 5, 2, 3]
+
+>>> ================================ RESTART ================================ 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(1,0)
+
+Enter as input string a 2-bit binary list:e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,0,0,1,0,1,0,1,1,1]
+
+Input :  [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+Output:  [2, 3, 3, 3, 1, 1, 5, 5, 2, 3, 1]
+
+>>> ================================ RESTART ================================ 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(1,1)
+
+Enter as input string a 2-bit binary list: e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,1,1,1,1,1,1,1,1,1]
+
+Input :  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Output:  [3, 1, 5, 2, 3, 1, 5, 2, 3, 1, 5]

@@ -1,0 +1,4 @@
+def km2miles():
+    x = input("What is the distance in kilometers? ")
+    print x, "km is" x*.62, "miles."
+    

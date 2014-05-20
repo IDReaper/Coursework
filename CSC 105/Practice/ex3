@@ -1,0 +1,5 @@
+def greet(namePerson):
+    print"Hello", namePerson
+
+def cube(number)
+    print number * number * number

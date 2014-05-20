@@ -1,0 +1,41 @@
+Shawn Thompson
+CSC 207
+Project 3
+
+1.
+Base Case: 	(cube-all'()) = '()
+
+Non-Recursive: 	The list of the cubes of the numbers in the list (cdr LS)
+		(cube-all (cdr '(x0 x1 ... xN)))
+		=(cube-all '(x1 x2 ... xN))
+		=(x1**3 x2**3 ... xN**3)
+
+Recursive:	(cube-all '(x0 x1 ... xN)) = (x0**3 x1**3 ... xN**3)
+		(cube-all '(x1 x2 ... xN)) = (x1**3 x2**3 ... xN**3)
+		(cons (* (car LS) (car LS) (car LS)(cube-all (cdr LS)))
+
+Definition:
+(define cube-all(lambda(LS)
+                    (if
+                      (not (null? LS))
+                        (cons (* (car LS) (car LS) (car LS)) (cube-all (cdr LS))) LS)))
+
+
+2.
+Base Case:	(rdc '(a)) = '()
+
+Non-Recursive:	The list of the items with the last item removed.
+		(rdc (cdr '(x0 x1 ... xN-1 xN)))
+		=(rdc '(x0 x1 ... xN-1))
+		
+Recursive:	(rdc '(x0 x1 ... xN-1 xN))
+		(rdc '(x0 x1 ... xN-1))
+		(cons (car LS) (rdc (cdr LS)))
+
+Definition:
+(define rdc(lambda(LS)
+             (if (null? (cdr LS))
+                 '()
+                 (cons (car LS) (rdc (cdr LS))))))
+
+

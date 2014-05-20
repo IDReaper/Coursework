@@ -1,0 +1,100 @@
+Welcome to DrScheme, version 4.1 [3m].
+Language: Essentials of Programming Languages (3rd ed.); memory limit: 128 megabytes.
+> (define cube(lambda(x)(* x x)))
+> (cube 2)
+4
+> (define cube(lambda(x)(* x x x)))
+> (cube 2)
+8
+> (cube 5)
+125
+> (define cube-two(lambda(x y)(* x x x)(* y y y)))
+> (cube-two 1 4)
+64
+> (cube-two 2 5)
+125
+> (define cube-two(lambda(x y)list('(* x x x) '(* y y y))))
+> (cube-two 2 5)
+. . procedure application: expected procedure, given: (* x x x); arguments were: (* y y y)
+> (define cube-two(lambda(x)(* x x x)lambda(y)(* y y y)))
+. lambda: bad syntax in: lambda
+> (define cube-two(lambda(x y)'(* x x x)'(* y y y)))
+> (cube-two 2 5)
+(* y y y)
+> (define cube-two(lambda(x y)(* x x x))* y y y)
+. define: bad syntax (multiple expressions after identifier) in: (define cube-two (lambda (x y) (* x x x)) * y y y)
+> (define cube-two(lambda(x y)list(x y)((* x x x)(* y y y))))
+> (cube 1 4)
+. . procedure cube: expects 1 argument, given 2: 1 4
+> (define cube-two(lambda(x y)* x x x)* y y y)
+. define: bad syntax (multiple expressions after identifier) in: (define cube-two (lambda (x y) * x x x) * y y y)
+> (define cube-two(lambda(x y)(* x x x)))
+> cube-two(1)
+#<procedure:cube-two>
+. . procedure application: expected procedure, given: 1 (no arguments)
+> (cube-two 1)
+. . procedure cube-two: expects 2 arguments, given 1: 1
+> (list x y(define cube-two(lambda(x y)(* x x x))))
+. define: not allowed in an expression context in: (define cube-two (lambda (x y) (* x x x)))
+> (define cube-two((lambda(x y)(list x y))1 2 3 4))
+. . #<procedure>: expects 2 arguments, given 4: 1 2 3 4
+> (define cube-two(lambda(x y)list '(cube x) '(cube y)))
+> (cube-two 1 4)
+(cube y)
+> (define cube-two(lambda(x y) (cube x) (cube y)))
+> cube-two 1 4)
+#<procedure:cube-two>
+1
+4
+. read: unexpected `)'
+> (cube-two 1 4)
+64
+> (define cube-two(list(x y)(cube x)(cube y)))
+. . reference to undefined identifier: x
+> (define cube-two(list('x 'y)(cube x)(cube y)))
+. . procedure application: expected procedure, given: x; arguments were: y
+> (define cube-two(lambda(x y)list(x y)((cube x)(cube y))))
+> (cube-two 1 4)
+. . procedure application: expected procedure, given: 1; arguments were: 4
+> (define cube-two(lambda(x y)cons '(cube x) '(cube y)))
+> (cube-two 1 4)
+(cube y)
+> (define cube-two(lambda(x y)list(x y)(cube x)(cube y)))
+> (cube-two 1 4)
+. . procedure application: expected procedure, given: 1; arguments were: 4
+> (define cube-two(lambda(x.y)(cube x)(cube y)))
+> (cube-two 1 4)
+. . procedure cube-two: expects 1 argument, given 2: 1 4
+> (define cube-two(lambda(x y)(cube x)(cube y))list(x y))
+. define: bad syntax (multiple expressions after identifier) in: (define cube-two (lambda (x y) (cube x) (cube y)) list (x y))
+> (define cube-two(lambda(x y)list((cube x)(cube y))))
+> (cube-two 1 4)
+. . procedure application: expected procedure, given: 1; arguments were: 64
+> (list(x y)(define cube-two(lambda(x y)(cube x)(cube y))))
+. define: not allowed in an expression context in: (define cube-two (lambda (x y) (cube x) (cube y)))
+> (define cube-two(lambda(x y)(+ (cube x)(cube y))))
+> (cube-two 1 4)
+65
+> (define cube-two(lambda(x y)(append (cube x)(cube y))))
+> (cube-two 1 4)
+. . append: expected argument of type <proper list>; given 1
+> (define cube-two(lambda(x y)(list (cube x) (cube y))))
+> (cube-two 1 4)
+(1 64)
+> (define pizza-cost(lambda(p d)(/ p (* pi (* (d/2) (d.2))))))
+> (pizza-cost 10.0 10.0)
+. . reference to undefined identifier: pi
+> (define pizza-cost(lambda(p d)(/ p (* 3.14 (* (d/2) (d.2))))))
+> (pizza-cost 10.0 10.0)
+. . reference to undefined identifier: d/2
+> (define pizza-cost(lambda(p d)(/ p (* 3.14 (* (/ d 2) (/ d 2))))))
+> (pizza-cost 10.0 10.0)
+0.12738853503184713
+> (define pizza-cost(lambda(p d)(/ p (* pi (* (/ d 2) (/ d 2))))))
+> (require racket/math)
+. racket/math: standard-module-name-resolver: collection not found: "racket" in any of: (#<path:C:\Documents and Settings\sthomp12\Application Data\PLT Scheme\4.1\collects> #<path:C:\Program Files\PLT\collects>) in: racket/math
+> (require math)
+. math: standard-module-name-resolver: collection not found: "math" in any of: (#<path:C:\Documents and Settings\sthomp12\Application Data\PLT Scheme\4.1\collects> #<path:C:\Program Files\PLT\collects>) in: math
+> (require racket/math)
+. racket/math: standard-module-name-resolver: collection not found: "racket" in any of: (#<path:C:\Documents and Settings\sthomp12\Application Data\PLT Scheme\4.1\collects> #<path:C:\Program Files\PLT\collects>) in: racket/math
+> 

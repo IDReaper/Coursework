@@ -1,0 +1,41 @@
+Welcome to DrScheme, version 4.1 [3m].
+Language: Essentials of Programming Languages (3rd ed.); memory limit: 128 megabytes.
+> (last '(a b c))
+. . reference to undefined identifier: last
+> (last L) = (last(cdr L))
+. . reference to undefined identifier: last
+#<procedure:=>
+. . reference to undefined identifier: last
+> (define last
+    (lambda ls)
+    (if (not(null? ls))
+        (last (cdr ls))))
+. define: bad syntax (multiple expressions after identifier) in: (define last (lambda ls) (if (not (null? ls)) (last (cdr ls))))
+> (define last
+    (lambda ls)
+    (if (not(null? ls))
+        ((last(cdr ls)))))
+. define: bad syntax (multiple expressions after identifier) in: (define last (lambda ls) (if (not (null? ls)) ((last (cdr ls)))))
+> (define last
+    (lambda ls)
+    (if ((null? (cdr ls))
+        (car ls))
+        (last (cdr ls))
+        ))
+. define: bad syntax (multiple expressions after identifier) in: (define last (lambda ls) (if ((null? (cdr ls)) (car ls)) (last (cdr ls))))
+> (define last
+    (lambda ls)
+    (if (null? (cdr ls))
+        (car ls)
+        (last (cdr ls))
+        ))
+. define: bad syntax (multiple expressions after identifier) in: (define last (lambda ls) (if (null? (cdr ls)) (car ls) (last (cdr ls))))
+> (define last
+    (lambda (ls)
+    (if (null? (cdr ls))
+        (car ls)
+        (last (cdr ls))
+        )))
+> (last '(a b c))
+c
+> 

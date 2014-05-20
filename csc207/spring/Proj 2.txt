@@ -1,0 +1,58 @@
+CSC 207 - Symbolic Programming
+
+Project #2 - Recursive numerical & list functions
+
+Part 1: Perform a full recursive analysis for each of the following three problems
+as demonstrated in the notes on recursive functions. Carefully follow the
+steps as given in the notes. The main difficulty in these types of problems is to 
+find the recursive case. Be sure to label the four steps in developing the complete 
+recursive definition and write the complete recursive definition at the end of each 
+analysis. Do not implement in Scheme yet! 	(50 pts) 
+
+1. The sumOdd function is defined as: (sumOdd N) = 1 + 3 + … + ((2 * N) - 1), for 
+integer N > 0, which finds the sum of the first N odd positive integers. Note that 
+the Nth odd positive integer is given by the formula ((2 * N) - 1). 	
+
+Examples of use:
+(sumOdd 1)  ==> 1 
+(sumOdd 4)  ==> 16  (= 1 + 3 + 5 + 7)
+(sumOdd 5)  ==> 25  (= 1 + 3 + 5 + 7 + 9)
+ 
+2. The sumList function is defined as (sumList LS) = the sum of the numbers in LS, 
+a list of integers.
+
+Examples of use:
+(sumlist '()) ==> 0
+(sumlist '(4)) ==> 4
+(sumlist '(2 4 1 7 3)) ==> 17
+
+3. (getNth N LS) = the Nth element (with indexes starting at 1) of list LS, else ().
+In other words, (getNth N '(x0 x1 ... xN ... xM)) = xN, if there is an Nth element, 
+else (). 
+
+examples of use:
+(getNth 4 '()) returns ()
+(getNth 0 '(a b c)) returns a
+(getNth 3 '(a b c)) returns ()
+(getNth 3 '(a b c d e)) returns d
+
+
+Part 2: Implement each recursive definition from part 2 as a Scheme procedure.
+Test these procedures on the examples of use problems given above.  (50 pts)
+
+4. (sumOdd N)
+
+5. (sumList LS)
+
+6. (getNth N LS)
+
+
+Due for part 1 is a text file containing your three recursive analyses.
+Due for part 2 is a listing of your commented code for these Scheme procedures, 
+along with a complete transcript of your Scheme session running the procedures 
+on the given test cases. 
+
+Please combine all your files together into one readable text (.txt) file for 
+submission!
+
+

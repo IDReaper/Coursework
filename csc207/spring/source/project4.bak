@@ -1,0 +1,11 @@
+(define reverse_alt (lambda (LS)
+                  (if (null? LS) LS
+                      (append (reverse_alt (cdr LS)) (list (car LS)))))) 
+
+(define reverseHelper (lambda(LS Acc)
+                          (if
+                           (null? LS)
+                           Acc
+                           (reverseHelper(cdr LS)(cons (car LS) Acc)))))
+
+(define reverse (lambda (LS) (reverseHelper LS '())))

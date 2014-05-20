@@ -1,0 +1,43 @@
+Shawn Thompson
+CSC 207
+Dr. Almeida
+In Class Assignment #3
+
+
+Definitions 1-3:
+
+
+(define cube-two (lambda (x y) (list (* x x x) (* y y y))))
+
+(define second1 (lambda (LS) (cadr LS)))
+
+(define second2 (lambda (LS) (if (and (not (null? LS)) (not (null? (cdr LS)))) (cadr LS) LS)))
+
+
+Interactions 1-3:
+
+
+> (cube-two 1 4)
+(1 64)
+
+> (cube-two 2 5)
+(8 125)
+
+> (second1 '(a b))
+b
+
+> (second1 '(c d e f g))
+d
+
+> (second2 '())
+()
+
+> (second2 '(a))
+(a)
+
+> (second2 '(a b))
+b
+
+> (second2 '(c d e f g))
+d
+

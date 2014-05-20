@@ -1,0 +1,24 @@
+1.
+Base Case: 	(cube-all'()) = '()
+Non-Recursive: 	(cube-all LS) = (x0**3 x1**3 ... xN**3)
+Recursive: 	(cube-all LS) = (x0**3 x1**3 ... xN**3)
+	   	(cube-all LS) = (cube-all (cdr LS))
+
+2.
+Base Case: 	(deleteNth N '()) = '()
+Non-Recursive:	(deleteNth N '(x0 x1 ... xN ... xM)  = (x0 x1 ... xM)
+Recursive Case:	(deleteNth N LS)  = (cons (car LS)(deleteNth N (cdr LS)))
+
+3.
+
+> (define cube-all(lambda(LS)
+                    (if
+                     (and
+                      (not (null? LS))
+                      (not (null? (cdr LS))))
+                        (cons (cube-all (cdr LS)) (power (car LS) 3)) LS)))
+
+4.
+
+> (define deleteNth(lambda(N LS)
+

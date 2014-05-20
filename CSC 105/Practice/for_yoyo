@@ -1,0 +1,49 @@
+from random import randrange
+
+def scrollpoop(y):
+    x = 0
+    while timeRemaining(y):
+        print "POOP!"
+        x = x+1
+        print "EEWWWW!"
+        x = x+1
+    print x
+
+def example(x):
+    for i in range(x):
+        forward(0.5)
+        backward(0.5)
+
+def exampleTime(x):
+    while timeRemaining(x):
+        forward(.5)
+        backward(.5)
+    stop()
+
+def simplePlay(x):
+    for i in range(x):
+            t = randrange(1,3,1)
+            forward(.5,t)
+            backward(.5,t)
+            turnRight(.5,t)
+            turnLeft(.5,t)    
+    
+def play():
+    x = input("Enter the number of times you would like to repeat, 0 for indefinite: ")
+    if x == 0:
+        y = 1
+        while y == 1:
+            t = randrange(1,3,1)
+            forward(.5,t)
+            backward(.5,t)
+            turnRight(.5,t)
+            turnLeft(.5,t) 
+
+    else:
+        for i in range(x):
+            t = randrange(1,3,1)
+            forward(.5,t)
+            backward(.5,t)
+            turnRight(.5,t)
+            turnLeft(.5,t) 
+        

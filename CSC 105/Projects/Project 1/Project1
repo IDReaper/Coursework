@@ -1,0 +1,14 @@
+def squareMan():
+    
+    forward(1,.85)
+    turnLeft(1,.352)
+    forward(1,.85)
+    turnLeft(1,.352)
+    forward(1,.85)
+    turnLeft(1,.352)
+    forward(1,.85)
+    turnLeft(1,.352)
+    
+squareMan()
+
+

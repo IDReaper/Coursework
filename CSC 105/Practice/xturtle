@@ -1,0 +1,34 @@
+def yah():
+    xturtle.pencolor("red")
+    xturtle.fillcolor("red")
+    begin_fill()
+    for i in range(4):
+        forward(100)
+        right(90)
+    end_fill()
+
+def moreYah():
+    for i in range(4):
+        yah()
+        right(90)
+
+def round():
+    xturtle.pencolor("red")
+    xturtle.fillcolor("red")
+    for i in range(4):
+        begin_fill()
+        circle(100)
+        circle(-100)
+        end_fill()
+        right(45)
+        begin_fill()
+        circle(200)
+        circle(-200)
+        right(45)
+        end_fill()
+    
+
+def go():
+    moreYah()
+    round()
+        

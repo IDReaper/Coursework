@@ -1,0 +1,7 @@
+def time(x):
+    startTime = currentTime()
+    while (currentTime() - startTime) < x:
+        print "lol" 
+    
+
+    

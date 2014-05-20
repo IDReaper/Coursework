@@ -1,0 +1,16 @@
+ (define power(lambda(x n)
+	(if (= n 0)
+	    1
+	(* (power x (- n 1)) x))))
+
+
+
+
+(define cube-all(lambda(LS)
+                    (if
+                     (and
+                      (not (null? LS))
+                      (not (null? (cdr LS))))
+                        (cons (cube-all (cdr LS)) (power (car LS) 3)) LS)))
+> (cube-all '(3 6 8))
+(((8) . 216) . 27)

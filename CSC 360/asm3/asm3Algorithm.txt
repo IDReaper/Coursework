@@ -1,0 +1,56 @@
+# This is an algorithm for asm3.py of csc360 Fall 2009 to simulate
+# a model of a 2-bit binary counter: Example 1.9, p. 22 of text book
+
+(1) Define a function named, say, "zValue" which is to return appropriate
+value for the output according to the state value being (0,0), (0,1),
+(1,0) or (1,1). Use FIGURE 1.19 Transition diagram for state machine, on
+page 24 to determine the returned value.
+
+(2) prompt user to enter initial state of the Finite State Machine.
+
+(3) read the input store it in variable state.
+
+(4) prompt user to enter a 2-bit binary list.
+
+(5) read the input store it in variable x.
+
+(6) initiate variable z to serve as output list
+
+(7) repeat as many times as number of elements in the list x
+           for each element e in the list x
+              if e equals 0
+                 do not alter the state value, 
+                 but output the same value as in last iteration.
+              else
+                 alter state value and append appropriate value returned 
+                 by "zValue" to list z.
+
+(8) print x preceded by some message.
+
+(9) print z preceded by some message.
+
+ The following shows the interface between user and the program in three executions:
+ >>> ================================ RESTART ================================
+>>> 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(0,1)
+Enter as input string a 2-bit binary list: e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,0,0,1,0,1,0,1,1,1]
+Input :  [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+Output:  [5, 2, 2, 2, 3, 3, 1, 1, 5, 2, 3]
+>>> ================================ RESTART ================================
+>>> 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(1,0)
+Enter as input string a 2-bit binary list:e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,0,0,1,0,1,0,1,1,1]
+Input :  [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1]
+Output:  [2, 3, 3, 3, 1, 1, 5, 5, 2, 3, 1]
+>>> ================================ RESTART ================================
+>>> 
+Enter initial state of the Finite State Machine: e.g. (0,1)
+(1,1)
+Enter as input string a 2-bit binary list: e.g. [1,1,0,0,1,0,1,0,1,1,1]
+[1,1,1,1,1,1,1,1,1,1,1]
+Input :  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Output:  [3, 1, 5, 2, 3, 1, 5, 2, 3, 1, 5]   

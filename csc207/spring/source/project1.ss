@@ -1,0 +1,5 @@
+(define delete-second1(lambda (LS) (cons p(car LS) (cdr (cdr LS)))))
+(define delete-second2 (lambda (LS) (if (and (not (null? LS))(not (null? (cdr LS)))) (delete-second1 LS) LS)))
+(define switch-one-and-two (lambda (LS) (if (and (not (null? LS))(not (null? (cdr LS)))) (cons (car (cdr LS)) (cons (car LS) (cdr (cdr LS)))) LS)))
+(define put-first-last (lambda (L) (if (not (null? L)) (append (cdr L) (list (car L))) '())))
+(define make-unequal-pair (lambda (X Y) (if (not (equal? X Y)) (list X Y) (list X))))

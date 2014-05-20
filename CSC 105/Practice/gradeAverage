@@ -1,0 +1,41 @@
+from random import randrange
+
+def gradesSimple():
+    x = input("Enter the grade:")
+    y = input("Enter the grade:")
+    z = input("Enter the grade:")
+
+    print "The average is:", ((x+y+z)/3)
+
+def grades():
+
+    g = raw_input("Enter grades or randomly generate?(E/R) ")
+
+    if g == "E":
+        x = input("Enter the number of grades you would like to average: ")
+        grades = 0
+        for i in range(x):
+            grades = grades+input("Enter the grade:")
+
+        print "The average is:", grades/x
+
+    elif g == "R":
+        y = input("Enter the number of grades you would like to average: ")
+        grades = 0
+        for i in range(y):
+            grades = grades+randrange(0,101)
+            print grades
+
+        print "The average is:", grades/y
+        
+
+        
+    
+
+    
+
+        
+    
+
+    
+    

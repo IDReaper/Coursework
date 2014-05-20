@@ -1,0 +1,34 @@
+Question 1:
+
+Step1
+Base Case: sumOdd(1) = 1
+
+Step 2
+Non-Recursive: sumOdd(n) = n + n + n +...+((n*2)-1)
+
+Step 3
+Recursive:
+
+sumOdd(n)         = n + n +...+ ((n*2)-1)
+sumOdd(((n*2)-1)) = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+not right -_-
+(define sumOdd(lambda (n)
+	(if (= n 1)
+	    1
+            (+ (sumOdd(- (* n 2) 1)) n))))

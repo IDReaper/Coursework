@@ -1,0 +1,77 @@
+Shawn Thompson
+CSC 207
+Dr. Almeida
+In Class Assignment #4
+
+
+Question #1:
+
+
+Base case: power(X, 0) = 1
+
+Non-Recursive: power(X, N-1) = X**(N - 1) = (X*X*...*X) N-2 multiplications	
+
+Recursive: 
+power(X, N)    = X**N     = (X*X*...*X*X) N-1 multiplication
+power(X, N-1)  = X**(N-1) = (X*X... *X) N-2 multiplications
+;N-2 is one less X than N-1
+;multiply the X back into N-1
+so power(X,N) = power(X,N-1)*X if N > 0
+
+
+Question #2
+
+
+power(X,N)
+
+(define power(lambda(X N)
+	(if (= N 0)
+	    1
+	(* (power X (- N 1)) X)))
+
+> (power 2 0)
+1
+> (power 2 5)
+32
+> (power 3 2)
+9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recursive: power(x, n) = power((x**(n-1), n))
+
+ 
+
+
+
+

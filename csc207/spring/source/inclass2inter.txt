@@ -1,0 +1,15 @@
+Welcome to DrScheme, version 4.2.3 [3m].
+Language: Essentials of Programming Languages (3rd ed.); memory limit: 128 megabytes.
+> (cube 2)
+8
+> (cube 5)
+125
+> (sphere 2)
+33.510321638291124
+> (sphere 5.3)
+623.6145193179834
+> (pizza-cost 10.0 10.0)
+0.12732395447351627
+> (pizza-cost 13.5 15.0)
+0.07639437268410977
+> 

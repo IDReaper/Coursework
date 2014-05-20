@@ -1,0 +1,145 @@
+Shawn Thompson
+CSC 207
+In-Class Assignment #4
+__________________________________________________________________
+
+Part 1, Part 3, Part 5:
+
+1 ?- listing.
+
+mother(A, B) :-
+        parent(A, B),
+        female(A).
+
+parent(pete, ian).
+parent(ian, peter).
+parent(ian, lucy).
+parent(lou, pete).
+parent(lou, pauline).
+parent(cathy, ian).
+
+sibling(A, C) :-
+        parent(B, A),
+        parent(B, C),
+        A\=C.
+
+male(ian).
+male(pete).
+male(peter).
+
+predecessor(A, B) :-
+        parent(A, B).
+predecessor(A, C) :-
+        parent(A, B),
+        predecessor(B, C).
+
+father(A, B) :-
+        parent(A, B),
+        male(A).
+
+grandparent(A, C) :-
+        parent(A, B),
+        parent(B, C).
+
+female(cathy).
+female(lucy).
+female(pauline).
+female(lou).
+true.
+______________________________________________________
+
+Part 2:
+
+2 ?- parent(ian, lucy).
+true.
+
+3 ?- parent(ian, pauline).
+false.
+
+4 ?- parent(cathy, peggy).
+false.
+
+5 ?- parent(Parent, lucy).
+Parent = ian .
+
+6 ?- parent(lou, Child).
+Child = pete .
+
+7 ?- parent(Parent,lucy), parent(Parent,peter).
+Parent = ian .
+
+8 ?- mother(cathy, ian).
+true.
+
+9 ?- mother(pete, ian).
+false.
+
+10 ?- mother(Mother, Child).
+Mother = lou,
+Child = pete .
+____________________________________________________________________
+
+Part 4:
+
+11 ?- grandparent(pete, Grandchild).
+Grandchild = peter .
+
+12 ?- sibling(Sibling, pauline).
+Sibling = pete .
+
+13 ?- sibling(pauline, Sibling).
+Sibling = pete .
+
+14 ?- predecessor(Ancestor, lucy).
+Ancestor = ian ;
+Ancestor = pete ;
+Ancestor = lou ;
+Ancestor = cathy ;
+false.
+
+15 ?- predecessor(Ancester, Descendent).
+Ancester = pete,
+Descendent = ian ;
+Ancester = ian,
+Descendent = peter ;
+Ancester = ian,
+Descendent = lucy ;
+Ancester = lou,
+Descendent = pete ;
+Ancester = lou,
+Descendent = pauline ;
+Ancester = cathy,
+Descendent = ian ;
+Ancester = pete,
+Descendent = peter ;
+Ancester = pete,
+Descendent = lucy ;
+Ancester = lou,
+Descendent = ian ;
+Ancester = lou,
+Descendent = peter ;
+Ancester = lou,
+Descendent = lucy ;
+Ancester = cathy,
+Descendent = peter ;
+Ancester = cathy,
+Descendent = lucy ;
+false.
+___________________________________________________________________
+
+Part 6:
+
+16 ?- father(cathy, ian).
+false.
+
+17 ?- father(pete, ian).
+true.
+
+18 ?- father(Father, Child).
+Father = pete,
+Child = ian ;
+Father = ian,
+Child = peter ;
+Father = ian,
+Child = lucy ;
+false.

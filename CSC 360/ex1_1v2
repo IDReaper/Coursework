@@ -1,0 +1,39 @@
+import string, os
+
+def inOut_4():
+    
+    #The "r" stands for read, the "w" stands for write.
+    #Be sure to place the .dat and .out file in the same folder as the program.
+    Outfile = open("vData.out","w")            # output file
+    Outfile.write("Simulation of System of Electrical Resistive Network")
+    print
+    Outfile.write("======================================")
+    print
+    
+    Infile = open("vData.dat","r")              # input file
+    r_val = Infile.readline()                   #Reads the entire first line of the file
+    print "Resistance values:",r_val
+    sPr = string.split(r_val)                   #Seperates the two values on line 0, sPr is a list
+    fPoint_r = map(float,sPr)
+    r = fPoint_r[0]
+    r2 = fPoint_r[1]
+    Outfile.write("     R1 =%6.2f, R2 =%6.2f"%(r,r2))
+
+    #v_val = Infile.read()                       #Read all lines in file. May be used to replace readline();single line
+    #sPv = string.split(v_val)
+    #fPoint_v = map(float,sPv)
+    #x = fPoint_v[0]
+    
+    #print "Voltages", sPv
+
+    v = Infile.readline()
+    while v:
+        v = string.split(v)
+        v = map(float,v)
+        v = v[0]
+        vr = v*((r2)/(r1+r2))
+        Outfile.write("%-6.2f     %-6.2f   "%(v,vr))
+        v = Infile.readline()
+        Infile.close
+        Outfile.close
+    
